@@ -5,15 +5,15 @@ on: [push, pull_request]
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
 
       - name: Setup Ruby
-        uses: ruby/setup-ruby@v1
+      - uses: ruby/setup-ruby@v1
         with:
-          ruby-version: 2.7 # こちらのバージョンは適切なものに変更してください。
+          ruby-version: '3.2'
+          bundler-cache: true
 
       - name: Install dependencies
         run: |
