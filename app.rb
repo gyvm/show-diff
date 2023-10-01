@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'sinatra'
 require 'diff/lcs'
 require_relative 'diff_html_formatter'
