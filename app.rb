@@ -11,5 +11,5 @@ post '/compare' do
   modified = params[:modified]
 
   @result = DiffHTMLFormatter.new(original, modified).to_html
-  erb :result
+  erb :index
 end
