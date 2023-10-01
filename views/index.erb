@@ -1,5 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Text Comparison Tool</title>
+  <style>
+      body {
+          font-family: Arial, sans-serif;
+          padding: 20px;
+      }
+      textarea {
+          width: 100%;
+          height: 200px;
+          padding: 10px;
+          box-sizing: border-box;
+          margin-bottom: 10px;
+          font-family: inherit;
+          font-size: 16px;
+      }
+      input[type="submit"] {
+          padding: 10px 15px;
+          font-size: 16px;
+          cursor: pointer;
+      }
+  </style>
+</head>
+<body>
 <form action="/compare" method="post">
+  <label for="original">Original Text:</label><br>
   <textarea name="original" placeholder="Original text"></textarea><br>
+  <label for="modified">Modified Text:</label><br>
   <textarea name="modified" placeholder="Modified text"></textarea><br>
   <input type="submit" value="Compare">
 </form>
+</body>
+</html>
