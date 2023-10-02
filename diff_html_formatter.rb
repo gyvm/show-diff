@@ -2,10 +2,13 @@
 
 require 'diff/lcs'
 
+# DiffHTMLFormatterクラスは、2つの文字列間の違いをHTML表現で生成します。
+# このクラスは、Longest Common Subsequence (LCS) アルゴリズムを使用して
+# 類似点を識別します。違いは赤（最初の文字列からの削除）と 緑でハイライトされます（2番目の文字列からの追加）。
 class DiffHTMLFormatter
-  def initialize(a, b)
-    @a = a
-    @b = b
+  def initialize(original, modified)
+    @orig = original
+    @mod = modified
   end
 
   def to_html
@@ -14,6 +17,7 @@ class DiffHTMLFormatter
 
   private
 
+  # rubocop:disable Metrics/AbcSize, Metrics/MethodLength
   def formatted_diff
     lcs = Diff::LCS.lcs(@a, @b)
     b_diff = []
@@ -48,4 +52,5 @@ class DiffHTMLFormatter
 
     b_diff
   end
+  # rubocop:enable Metrics/AbcSize, Metrics/MethodLength
 end
