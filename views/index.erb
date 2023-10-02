@@ -34,9 +34,9 @@
 <body>
 <form action="/compare" method="post">
   <label for="original">Original Text:</label><br>
-  <textarea name="original" placeholder="Original text"></textarea><br>
+  <textarea name="original"><%= session[:original] %></textarea>
   <label for="modified">Modified Text:</label><br>
-  <textarea name="modified" placeholder="Modified text"></textarea><br>
+  <textarea name="modified"><%= session[:modified] %></textarea>
   <input type="submit" value="Compare">
 </form>
 <% if @result %>
